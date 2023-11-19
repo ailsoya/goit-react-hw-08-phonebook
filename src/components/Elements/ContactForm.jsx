@@ -1,11 +1,11 @@
 import styles from "../Style.module.css"
 import { useDispatch, useSelector } from "react-redux"
-import { getContacts } from "redux/selectors"
-import { addContact } from "redux/operations"
+import { selectAllContacts } from "redux/contacts/selectors"
+import { addContact } from "redux/contacts/operations"
 
 export const ContactForm = () => {
     const dispatch = useDispatch()
-    const contacts  = useSelector(getContacts)
+    const contacts  = useSelector(selectAllContacts)
 
     const handleSubmit = (evt) => {
         const form = evt.target

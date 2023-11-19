@@ -1,16 +1,23 @@
-import { ContactForm } from './Elements/ContactForm'
-import { ContactList } from './Elements/ContactList'
-import { Filter } from './Elements/Filter'
+import { useEffect, lazy } from 'react'
+import { useDispatch } from 'react-redux'
+import { Route, Routes } from 'react-router-dom'
+import { Layout } from './Layout';
+import { PrivateRoute } from './PrivateRoute';
+import { RestrictedRoute } from './RestrictedRoute';
+
+const Contacts = lazy(() => import('../pages/Contacts'))
 
 export const App = () => {
   return (
-    <div>
-      <h1>Phonebook</h1>
-      <ContactForm />
-
-      <h2>Contacts</h2>
-      <Filter />
-      <ContactList />
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route
+          
+          element={
+            <PrivateRoute redirectTo="/login" component={<Contacts />} />
+          }
+        />
+      </Route>
+    </Routes>
   )
 }
