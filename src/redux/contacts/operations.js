@@ -4,7 +4,7 @@ import axios from 'axios'
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com'
 
 const setAuthHeader = token => {
-  axios.defaults.headers.Authorization = `${token}`
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`
 }
 
 export const fetchContacts = createAsyncThunk(
@@ -26,7 +26,6 @@ export const addContact = createAsyncThunk(
   'contacts/addContact',
   async (contact, thunkAPI) => {
     try {
-      console.log(axios.defaults.headers.Authorization)
       const response = await axios.post('/contacts', { contact })
       console.log(response.data)
       return response.data

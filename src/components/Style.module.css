@@ -52,3 +52,32 @@
     padding: 2px 5px 2px 5px;
     cursor: pointer;
 }
+
+.Wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.Email {
+    font-weight: 700;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #2a363b;
+}
+
+.formReg {
+    width: 320px;
+}
+
+.labelReg {
+    display: flex;
+    row-gap: 5px;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
