@@ -1,6 +1,6 @@
 import styles from "../Style.module.css"
 import { useEffect } from "react"
-import { selectAllContacts, selectFilter } from "redux/contacts/selectors"
+import { selectAllContacts } from "redux/contacts/selectors"
 import { useSelector, useDispatch } from "react-redux"
 import { deleteContact, fetchContacts } from "redux/contacts/operations"
 
@@ -18,7 +18,7 @@ import { deleteContact, fetchContacts } from "redux/contacts/operations"
 
 export const ContactList = () => {
     const contacts = useSelector(selectAllContacts)
-    const filter = useSelector(selectFilter)
+    //const filter = useSelector(selectFilter)
     const dispatch = useDispatch()
     //const filteredContacts = getFilteredContacts(contacts, filter)
 
