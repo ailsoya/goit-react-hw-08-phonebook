@@ -2,7 +2,7 @@ import { ContactForm } from '../components/Elements/ContactForm'
 import { ContactList } from '../components/Elements/ContactList'
 import { Filter } from '../components/Elements/Filter'
 
-export const App = () => {
+export default function Contacts() {
   return (
     <div>
       <h1>Phonebook</h1>

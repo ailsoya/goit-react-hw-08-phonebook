@@ -1,11 +1,11 @@
 import styles from "../Style.module.css"
 import { useSelector, useDispatch } from "react-redux"
 import { selectFilter } from "redux/contacts/selectors"
-import { setFilter } from "redux/filterSlice"
+import { setFilter } from "redux/filter/slice"
 
 export const Filter = () => {
     const dispatch = useDispatch()
-    const value = useSelector(selectFilter).value
+    const value = useSelector(selectFilter)
 
     const handleChange = evt => {
         const filter = evt.target.value
